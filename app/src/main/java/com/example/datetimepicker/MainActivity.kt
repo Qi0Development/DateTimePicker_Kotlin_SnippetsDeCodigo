@@ -2,7 +2,6 @@ package com.example.datetimepicker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.DatePicker
 import com.example.datetimepicker.fragments.DatePickerDialogFragment
 import com.example.datetimepicker.fragments.TimePicker24DialogFragment
 import com.example.datetimepicker.fragments.TimePickerDialogFragment
@@ -17,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         btDatePicker.setOnClickListener { showDatePicker() }
         btTimePicker.setOnClickListener { showTimePicker() }
         btTimePicker24.setOnClickListener { showTimePicker24() }
-        btDateTimePicker.setOnClickListener {  }
     }
 
     private fun showDatePicker() {

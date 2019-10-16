@@ -34,18 +34,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:background="#8E24AA"
-        android:text="TimePicker 24 Hours"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/btDateTimePicker"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
         android:background="#43A047"
-        android:text="DateTime Picker"
+        android:text="TimePicker 24 Hours"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
 
