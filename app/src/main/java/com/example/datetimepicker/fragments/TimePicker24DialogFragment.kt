@@ -1,6 +1,7 @@
 package com.example.datetimepicker.fragments
 
 
+import TimeStampFormatter
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
@@ -18,6 +19,7 @@ import androidx.appcompat.app.AppCompatDialogFragment
 
 import com.example.datetimepicker.R
 import kotlinx.android.synthetic.main.fragment_time_picker24_dialog.view.*
+import java.util.*
 
 /**
  * A simple [Fragment] subclass.
@@ -66,6 +68,14 @@ class TimePicker24DialogFragment : AppCompatDialogFragment() {
                 val selectedMinute = if (minute < 10) "0$minute" else minute
 
                 mHourOfDay = "Hora: $selectedHourOfDay : $selectedMinute "
+
+                val myCal = Calendar.getInstance()
+                myCal.set(Calendar.HOUR_OF_DAY, hourOfDay)
+                myCal.set(Calendar.MINUTE, minute)
+
+                val timeStampFormatter = TimeStampFormatter()
+                val dateAgo = timeStampFormatter.format(myCal.time)
+                Toast.makeText(mContext, dateAgo, Toast.LENGTH_LONG).show()
             }
 
 

@@ -1,6 +1,7 @@
 package com.example.datetimepicker.fragments
 
 
+import TimeStampFormatter
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
@@ -73,6 +74,16 @@ class DatePickerDialogFragment : AppCompatDialogFragment() {
 
             dateFormatted = "Date: $mDay/$mMonth/$year"
             date = "$dateFormatted \nday: $mDay \nMonth: $mMonth \nYear: $year"
+
+            val myCal = Calendar.getInstance()
+            myCal.set(Calendar.YEAR, year)
+            myCal.set(Calendar.MONTH, month)
+            myCal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+            val timeStampFormatter = TimeStampFormatter()
+            val dateAgo = timeStampFormatter.format(myCal.time)
+
+            Toast.makeText(mContext, dateAgo, Toast.LENGTH_LONG).show()
         }
 
         dialogView.btOk.setOnClickListener {
